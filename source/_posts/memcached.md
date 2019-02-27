@@ -1,7 +1,7 @@
 ---
 title: memcached
 date: 2019-02-16 18:57:13
-tags: linux
+tags: memcache
 ---
 # 目录?
 
@@ -274,11 +274,11 @@ shell># service xinetd restart	# 重启
 
 ## 8、xshell 操作 memcache 的注意事项
 
-**回退(退格删除)快捷键：**
+回退(退格删除)快捷键：
 
 ctrl + backspace
 
-**退出 memcache 命令行：**
+退出 memcache 命令行：
 
 - 按下 ctrl + ]
 
@@ -423,7 +423,7 @@ shell># unzip pecl-memcache-php7.zip
 
 ==注意：主要是没有安装 unzip 指令==
 
-**解决方法：使用 yum -y install unzip 指令安装即可**
+解决方法：使用 yum -y install unzip 指令安装即可
 
 ```shell
 shell># cd pecl-memcache-php7
@@ -661,7 +661,7 @@ shell># service php-fpm start
 
 # 十二、Memcached 类的常用方法说明
 
-**常用的类方法如下所示：**
+常用的类方法如下所示：
 
 addServer(host, port)：host 就是 Linux 服务器地址，port默认是 11211（memcached端口），用于连接 memcached 服务器
 
