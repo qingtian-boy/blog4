@@ -22,7 +22,7 @@ tags: linux
 1.1.2、渲染数据
 
 ```html
-<block wx:for='{{变量}}' wx:key="key(键值，自定义)">
+<block wx:for='{ {变量} }' wx:key="key(键值，自定义)">
 	....
 </block>
 ```
@@ -83,8 +83,8 @@ Page({
 1.3.3、然后小程序 index.wxml 中渲染数据
 
 ```html
-<block wx:for="{{getHot}}" wx:key="key">
-	id:{{item.goods_id}}--goodsName:{{item.goods_name}}--price:{{itme.price}}
+<block wx:for="{ {getHot} }" wx:key="key">
+	id:{ {item.goods_id} }--goodsName:{ {item.goods_name} }--price:{ {itme.price} }
 </block>
 ```
 

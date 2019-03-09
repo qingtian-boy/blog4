@@ -58,7 +58,7 @@ http://php.net/manual/zh/book.mongodb.php
 ![1545355616070](1545355616070.png)
 
 ```
-MongoDB> db.class3.remove({_id:{'$in':[11,33,55]}})
+MongoDB> db.class3.remove({_id:{'$in':[11,33,55]} })
 ```
 
 代码如下图所示：
@@ -68,7 +68,8 @@ MongoDB> db.class3.remove({_id:{'$in':[11,33,55]}})
 删除后如下图所示：
 
 ```mongodb
-MongoDB> db.class3.find({_id:{'$in':[11,33,55]}})
+MongoDB> db.class3.find({_id:{'$in':[11,33,55]}
+})
 ```
 
 ![1545355673332](1545355673332.png)

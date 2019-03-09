@@ -454,7 +454,7 @@ MongoDB> db.class3.find()
 ```mongodb
 # 相当于编写： select * from class3 where _id > 997
 # 按条件查询数据
-MongoDB> db.class3.find( {_id:{'$gt':997}} )
+MongoDB> db.class3.find( {_id:{'$gt':997} } )
 ```
 
 ![1545276870479](1545276870479.png)
@@ -463,7 +463,7 @@ MongoDB> db.class3.find( {_id:{'$gt':997}} )
 
 ```mongodb
 # 相当于编写：select * from class3 where _id <=10
-MongoDB> db.class3.find( {_id:{'$lte':10}} )
+MongoDB> db.class3.find( {_id:{'$lte':10} } )
 ```
 
 ![1545277115173](1545277115173.png)
@@ -472,7 +472,7 @@ MongoDB> db.class3.find( {_id:{'$lte':10}} )
 
 ```mongodb
 # 相当于编写：select * from class3 where _id <=5 limit 3
-MongoDB> db.class3.find( {_id:{'$lte':5}} ).limit(3)
+MongoDB> db.class3.find( {_id:{'$lte':5} } ).limit(3)
 ```
 
 ![1545277305450](1545277305450.png)
@@ -481,9 +481,9 @@ MongoDB> db.class3.find( {_id:{'$lte':5}} ).limit(3)
 
 ```mongodb
 # 相当于编写：select * from class3 where id<=5 limit 2,3
-MongoDB> db.class3.find( {_id:{'$lte':5}} ).skip(2).limit(3)
+MongoDB> db.class3.find( {_id:{'$lte':5} } ).skip(2).limit(3)
 或者
-MongoDB> db.class3.find( {_id:{'$lte':5}} ).skip(2)
+MongoDB> db.class3.find( {_id:{'$lte':5} } ).skip(2)
 ```
 
 ![1545277509133](1545277509133.png)
@@ -503,7 +503,8 @@ MongoDB> db.class3.find().count(true)
 
 ```mongodb
 # 相当于编写：select count(*) from class3 where _id <= 7 limit 3,4
-MongoDB> db.class3.find( {_id:{'$lte':7}} ).skip(3).limit(4).count(true)
+MongoDB> db.class3.find( {_id:{'$lte':7}
+} ).skip(3).limit(4).count(true)
 ```
 
 ![1545278229397](1545278229397.png)
@@ -522,7 +523,7 @@ MongoDB> db.class3.find( {_id:{'$lte':7}} ).skip(3).limit(4).count(true)
 
 ```mongodb
 # 相当于编写：select * from class3 where _id=1 or _id>=997
-MongoDB> db.class3.find( {'$or':[{_id:1},{_id:{'$gte':997}}]} )
+MongoDB> db.class3.find( {'$or':[{_id:1},{_id:{'$gte':997} }]} )
 ```
 
 ![1545288313734](1545288313734.png)
@@ -540,7 +541,7 @@ MongoDB> db.class3.find( {'$or':[{_id:10},{name:'stu99'},{_id:100}]} )
 
 ```mongodb
 # 相当于编写：select * from class3 where _id<=5 or name='stu100'
-MongoDB> db.class3.find( {'$or':{_id:{'$lte':5}},{name:'stu100'}} )
+MongoDB> db.class3.find( {'$or':{_id:{'$lte':5} },{name:'stu100'} } )
 ```
 
 ![1545288655860](1545288655860.png)
@@ -569,14 +570,14 @@ MongoDB> db.class3.find( {'$and':[{name:'stu100'},{lesson:'Laravel'}]} )
 
 ```mongodb
 # 相当于编写：select * from class3 where _id<10 order by _id desc
-MongoDB> db.class3.find( {_id:{'$lt':10}} ).sort( {_id:-1} )
+MongoDB> db.class3.find( {_id:{'$lt':10} } ).sort( {_id:-1} )
 ```
 
 ![1545289209616](1545289209616.png)
 
 ## 6、update 命令和 $set 修改器
 
-命令格式：db.集合名称.update( {条件},{'$set':{字段名:值}}, false, true )
+命令格式：db.集合名称.update( {条件},{'$set':{字段名:值} }, false, true )
 
 > 说明：
 >
@@ -588,7 +589,7 @@ MongoDB> db.class3.find( {_id:{'$lt':10}} ).sort( {_id:-1} )
 
 ```mongodb
 # 相当于纺车：update class3 set lesson='Tp5' where _id<7
-MongoDB> db.class3.update( {_id:{'$lt':7}},{'$set':{lesson:'Tp5'}}, false, true )
+MongoDB> db.class3.update( {_id:{'$lt':7} },{'$set':{lesson:'Tp5'} }, false, true )
 ```
 
 ![1545289769521](1545289769521.png)
@@ -627,13 +628,13 @@ MongoDB> db.class2.remove({})
 
 $in 操作相当于 MySQL 中 in 操作语句，不过 in 在 MongoDB 中是非常快速，因为 $in 一定可以使用上索引，语法规则如下：
 
-db.集合名称.find( {字段名:{'$in':[...]}} )
+db.集合名称.find( {字段名:{'$in':[...]} } )
 
 案例：查询 _id 为 33，55，77，99 的记录
 
 ````mongodb
 # 相当于编写：select * from class3 where _id in(33,55,77,99)
-MongoDB> db.class3.find( {'_id':{'$in':[33,55,77,99]}} )
+MongoDB> db.class3.find( {'_id':{'$in':[33,55,77,99]} } )
 ````
 
 ![1545291014014](1545291014014.png)
@@ -1022,7 +1023,7 @@ shell># service php-fpm start
 修改前：
 
 ```mongodb
-MongoDB> db.class3.find({_id:{'$lte':9}})
+MongoDB> db.class3.find({_id:{'$lte':9} })
 ```
 
 ![1545299300349](1545299300349.png)
@@ -1038,7 +1039,7 @@ MongoDB> db.class3.find({_id:{'$lte':9}})
 修改成功后：
 
 ```mongodb
-MongoDB> MongoDB> db.class3.find({_id:{'$lte':9}})
+MongoDB> MongoDB> db.class3.find({_id:{'$lte':9} })
 ```
 
 ![1545299933586](1545299933586.png)
@@ -1052,7 +1053,7 @@ http://php.net/manual/zh/book.mongodb.php
 代码参看：code/delete.php，上传到 /mydata/wwwroot/php33/www/mongodb 下进行测试
 
 ```
-MongoDB> db.class3.remove({_id:{'$in':[11,33,55]}})
+MongoDB> db.class3.remove({_id:{'$in':[11,33,55]} })
 ```
 
 代码如下图所示：
@@ -1062,7 +1063,7 @@ MongoDB> db.class3.remove({_id:{'$in':[11,33,55]}})
 效果如下图所示：
 
 ```mongodb
-MongoDB> db.class3.find({_id:{'$in':[11,33,55]}})
+MongoDB> db.class3.find({_id:{'$in':[11,33,55]} })
 ```
 
 
@@ -1109,7 +1110,7 @@ shell># mongo -u<username> -p<password> ip:port/databaseName
 
 修改数据
 
-​	db.class4.update({_id:8},{'$set':{age:18}})
+​	db.class4.update({_id:8},{'$set':{age:18} })
 
 删除除数据
 
